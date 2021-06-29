@@ -147,6 +147,12 @@ nav > ul > li , a{
     color: snow;
     margin: 20px;
 }
+
+.cart:hover{
+    color: red;
+    transition: .6s;
+}
+
 #circle{
     text-align: center;
     height: 15px;

@@ -27,6 +27,12 @@ function del(arr,ite){
 
 }
 
+function rem(arr){
+    while(arr.length>=1){
+        arr.pop()
+    }
+}
+
 function sumCounter(arry){
     let sum = 0;
     for(i=0;i<arry.length;i++){
@@ -48,22 +54,22 @@ items.forEach(item =>{
 //addition
 var items = document.querySelectorAll(".item");
 var circle = document.createElement("div");
-
 circle.setAttribute("id","circle")
-circle.innerHTML=0
+var cart = document.getElementById("cart")
 
 for(let i=0;i<items.length;i++){
 
     let addBtn = items[i].querySelector(".add");
     let delBtn = items[i].querySelector(".del");
     let price = parseInt(items[i].querySelector(".pricei").innerHTML);
-    //let total = parseInt(document.getElementById("total").innerHTML);
-    
+        
     addBtn.addEventListener("click",()=>{    
-        add(totalPrice,price)
+        add(totalPrice,price);
         console.log(totalPrice);
-        sumCounter(totalPrice)
+        sumCounter(totalPrice);
         parseInt(document.getElementById("total").innerHTML = sumOfAll);
+        cart.appendChild(circle);
+        
     })
 
     delBtn.addEventListener("click",()=>{
@@ -76,3 +82,9 @@ for(let i=0;i<items.length;i++){
         }
     })
 } 
+
+deletee = document.getElementById("cart").addEventListener("click",()=>{
+    rem(totalPrice)
+    parseInt(document.getElementById("total").innerHTML = 0);
+    console.log(totalPrice)
+})
