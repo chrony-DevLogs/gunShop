@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping cart</title>
+    <link rel="shourtcat icon" href="icons/iconfinder_2561279_cart_shopping_icon_512px.png">
+    <link rel="stylesheet" href="fontawesome/css/all.css">
+    <link rel="stylesheet" href="E:\gomycodeDomProject\style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arimo&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <i class="fas fa-shopping-cart cart" id="cart"><span id="total">0</span><span>$</span></i>
+
+            <ul>
+                <li class="main " id="home"><img class="navIco" src="icons/iconfinder_4158604_game_gaming_genres_gun_handgun_icon_512px.png" alt="Gun icon"><a href="#" class="main ">Weapons</a></li>
+                <li id="Gear" class="hoverMe"><img class="navIco" src="icons/iconfinder_4172869_army_camp_camping_knife_pocket_icon_512px.png" alt=""><a href="# " class="navLink">Gear</a></li>
+                <li id="Suits" class="hoverMe"><img class="navIco" src="icons/iconfinder_4908128_clothes_clothing_fashion_garments_shirt_icon_512px.png" alt="Suits"><a href="#" class="navLink">Suits</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="shop">
+        <audio id="effect" src="audio/FastGlitch.mp3" type="audio/mp3"></audio>
+        <div class="shopItem">
+            <div class="item item1" id="it1">
+                <button class="add" id="add1">+</button><button class="del">-</button><span class="cont1 count"><button class="hart"><i class="fas fa-heart"></i></button></span>
+                <br>
+                <span class="price">$</span><span class="price pricei" id="price1">76</span>
+            </div>
+            <div class="item item2" id="it2">
+                <button class="add" id="add2">+</button><button class="del">-</button><span class="cont2 count"><button class="hart"><i class="fas fa-heart"></i></button></span>
+                <br>
+                <span class="price">$</span><span class="price pricei" id="price2">90</span>
+            </div>
+            <div class="item item3" id="it3">
+                <button class="add" id="add3">+</button><button class="del">-</button><span class="cont3 count"><button class="hart"><i class="fas fa-heart"></i></button></span>
+                <br>
+                <span class="price">$</span><span class="price pricei" class="price3">503</span>
+            </div>
+            <div class="item item4" id="it4">
+                <button class="add" id="add4">+</button><button class="del">-</button><span class="cont4 count"><button class="hart"><i class="fas fa-heart"></i></button></span>
+                <br>
+                <span class="price">$</span><span class="price pricei" class="price4">675</span>
+            </div>
+            <div class="item item5" id="it5">
+                <button class="add" id="add5">+</button><button class="del">-</button><span class="cont5 count"><button class="hart"><i class="fas fa-heart"></i></button></span>
+                <br>
+                <span class="price">$</span><span class="price pricei" class="price5">10</span>
+            </div>
+            <div class="item item6" id="it6">
+                <button class="add" id="add6">+</button><button class="del">-</button><span class="cont6 count"><button class="hart"><i class="fas fa-heart"></i></button></span>
+                <br>
+                <span class="price">$</span><span class="price pricei" class="price6">99</span>
+            </div>
+        </div>
+    </section>
+    <script src="main.js"></script>
+</body>
+</html>
+
+
+
+<!--
+    //sound efeects
+
+var items = document.querySelectorAll(".item");
+
+for(let i=0;i<items.length;i++){
+    let addBtn = items[i].querySelector(".add")
+    addBtn.addEventListener("click",()=>{
+        let price = parseInt(items[i].querySelector(".pricei").innerHTML);
+        let total = parseInt(document.getElementById("total").innerHTML)
+        document.getElementById("total").innerHTML = price + total
+        
+    })
+    let delBtn = items[i].querySelector(".del")
+    delBtn.addEventListener("click",()=>{
+        let price = parseInt(items[i].querySelector(".pricei").innerHTML);
+        let total = parseInt(document.getElementById("total").innerHTML)
+        document.getElementById("total").innerHTML = total -= price
+        if(total < 0){
+            document.getElementById("total").innerHTML = 0
+        }
+
+    })
+}
+
+/*
+            document.getElementById("total").innerHTML = price + total;   
+            let total = parseInt(items[i].querySelector("#total").innerHTML);
+    
+         */
+
+-->

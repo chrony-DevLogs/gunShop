@@ -1,0 +1,203 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body,html{
+    background: url("icons/abstract-1278017_1920.jpg") center ;
+    background-size: cover;
+    height: 100%;        
+}
+
+body{
+    cursor: url("icons/Hyper_Arrows.cur"),auto;
+}
+
+nav > ul{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    cursor: url("icons/Hyper_Arrows.cur"),pointer;
+
+}
+.hoverMe:hover{
+    background-color: rgba(255, 255, 255, 0.404);
+}
+
+
+nav{
+    background-color: rgba(24, 22, 22, 0.699);
+    height: 130px;
+    background-color: rgba(255, 255, 255, 0.404);
+    border-bottom: solid #b9b9b9 1px;
+}
+ul {
+    position: relative;
+    top: 80px;
+    
+}
+nav > ul > li{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+nav > ul > li , a{
+    width: 20%;
+    color: #fff;
+    padding: 3px 3px;
+    margin: 0 10px;
+    font-size: 30px;
+    font-family: 'Arimo', sans-serif;
+    
+}
+
+.main{
+    background-color: #595959;
+}
+
+.navIco{
+    width: 40px;
+    height: 40px;
+    padding: 0px;
+    border: solid snow 2px;
+}
+
+.shop{
+    display: flex;
+    justify-content: center;
+}
+
+.shopItem{
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+
+
+
+}
+.item{
+    margin: 2px;
+    min-height: 250px;
+    min-width: 250px;
+    height: 100%;
+}
+
+.item{
+    background: rgba(0, 0, 0, 0.623) center no-repeat;
+    background-size: cover;
+
+}
+
+.item:hover{
+    z-index: 1;
+    border: snow 5px solid;
+    height: 245px;
+    width: 245px;
+    background-size: 230px;
+    transition: .1s;
+}
+
+.item1{
+    background-image: url("icons/istolpng.png");
+    background-size: 150px;
+
+
+}
+.item2{
+    background-image: url("icons/smg.webp");
+    background-size: 300px;
+}
+
+.item3{
+    background-image: url("icons/Shoutgun.png");
+    background-size: 300px;
+
+
+}
+
+.item4{
+    background-image: url("icons/asult.png");
+    background-size: 250px;
+
+
+}
+.item5{
+    background-image: url("icons/Machete.webp");
+    background-size: 200px;
+
+
+}
+.item6{
+    background-image: url("icons/silencer.png");
+    background-size: 240px;
+
+
+}
+.cart{
+    float: right;
+    font-size: 50px;
+    color: snow;
+    margin: 20px;
+}
+#circle{
+    text-align: center;
+    height: 15px;
+    width: 15px;
+    border-radius: 100%;
+    background-color: red;
+    font-size: 15px;
+}
+
+.count{
+    height: 40px;
+    width: 40px;
+    color: #fff;
+    float: right;
+    margin: 10px;
+}
+
+.add,.del,.hart{
+    color: #fff;
+    margin: 10px 5px;
+    width: 20px;
+    background: none;
+    border: solid snow 1px;
+    cursor: url("icons/Hyper_Arrows.cur"),pointer;
+    
+}
+
+.add:hover,.del:hover{
+    background-color: rgba(255, 250, 250, 0.411);
+}
+
+.hart{
+    height: 40px;
+    width: 40px;
+}
+
+.hart:hover{
+    color: pink;
+    font-size: 15px;
+    transition: .1s;
+}
+
+.price{
+    color: snow;
+    float: right;
+    font-size: 25px;
+}
+
+@media screen and (max-width: 1000px){
+    nav{
+        display: none;
+    }
+
+}
