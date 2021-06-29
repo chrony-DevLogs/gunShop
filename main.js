@@ -1,7 +1,42 @@
 //sound efeects
 
 var items = document.querySelectorAll(".item");
+var totalPrice = [];
+var sumOfAll = 0;
 
+
+function add(arr,ite){
+    for(let i=0;i<arr.length;i++){
+        if(arr[i][0] == ite){
+            arr[i].push(ite)
+            return arr
+        }
+
+    }
+    arr.push([ite])
+    return arr
+}
+
+function del(arr,ite){
+    for(let i=0;i<arr.length;i++){
+        if(arr[i][0] == ite){
+            arr[i].pop()
+            return arr
+        }
+    }
+
+}
+
+function sumCounter(arry){
+    let sum = 0;
+    for(i=0;i<arry.length;i++){
+        for(let j=0;j<arry[i].length;j++){
+            sum += arry[i][j]
+            sumOfAll = sum;
+        }
+    }
+    return sum
+}
 
 items.forEach(item =>{
     item.addEventListener("mouseover",()=>{
@@ -13,36 +48,31 @@ items.forEach(item =>{
 //addition
 var items = document.querySelectorAll(".item");
 var circle = document.createElement("div");
-var i1 = document.getElementById("cart");
+
 circle.setAttribute("id","circle")
 circle.innerHTML=0
 
-
-
 for(let i=0;i<items.length;i++){
-    let addBtn = items[i].querySelector(".add")
-    addBtn.addEventListener("click",()=>{
-        let price = parseInt(items[i].querySelector(".pricei").innerHTML);
-        let total = parseInt(document.getElementById("total").innerHTML)
-        document.getElementById("total").innerHTML = price + total
-        i1.appendChild(circle)
-        circle.innerHTML ++
-        
+
+    let addBtn = items[i].querySelector(".add");
+    let delBtn = items[i].querySelector(".del");
+    let price = parseInt(items[i].querySelector(".pricei").innerHTML);
+    //let total = parseInt(document.getElementById("total").innerHTML);
+    
+    addBtn.addEventListener("click",()=>{    
+        add(totalPrice,price)
+        console.log(totalPrice);
+        sumCounter(totalPrice)
+        parseInt(document.getElementById("total").innerHTML = sumOfAll);
     })
 
-
-    let delBtn = items[i].querySelector(".del")
     delBtn.addEventListener("click",()=>{
-        let price = parseInt(items[i].querySelector(".pricei").innerHTML);
-        let total = parseInt(document.getElementById("total").innerHTML)
-        document.getElementById("total").innerHTML = total -= price
-        circle.innerHTML --
-        if(total < 0){
-            document.getElementById("total").innerHTML = 0;
-            
-        }
-        else if(total == 0){
-            i1.removeChild(circle)
+        del(totalPrice,price)
+        console.log(totalPrice);
+        sumCounter(totalPrice)
+        parseInt(document.getElementById("total").innerHTML = sumOfAll);
+        if(sumCounter(totalPrice) == 0){
+            parseInt(document.getElementById("total").innerHTML = 0);
         }
     })
 } 
