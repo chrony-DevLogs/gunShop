@@ -3,6 +3,7 @@
 var items = document.querySelectorAll(".item");
 var totalPrice = [];
 var sumOfAll = 0;
+var cart = document.getElementById("cart")
 
 
 function add(arr,ite){
@@ -24,7 +25,6 @@ function del(arr,ite){
             return arr
         }
     }
-
 }
 
 function rem(arr){
@@ -51,11 +51,6 @@ items.forEach(item =>{
     })
 })
 
-//addition
-var items = document.querySelectorAll(".item");
-var circle = document.createElement("div");
-circle.setAttribute("id","circle")
-var cart = document.getElementById("cart")
 
 for(let i=0;i<items.length;i++){
 
@@ -65,16 +60,12 @@ for(let i=0;i<items.length;i++){
         
     addBtn.addEventListener("click",()=>{    
         add(totalPrice,price);
-        console.log(totalPrice);
         sumCounter(totalPrice);
         parseInt(document.getElementById("total").innerHTML = sumOfAll);
-        cart.appendChild(circle);
-        
     })
 
     delBtn.addEventListener("click",()=>{
         del(totalPrice,price)
-        console.log(totalPrice);
         sumCounter(totalPrice)
         parseInt(document.getElementById("total").innerHTML = sumOfAll);
         if(sumCounter(totalPrice) == 0){
@@ -86,5 +77,4 @@ for(let i=0;i<items.length;i++){
 deletee = document.getElementById("cart").addEventListener("click",()=>{
     rem(totalPrice)
     parseInt(document.getElementById("total").innerHTML = 0);
-    console.log(totalPrice)
 })

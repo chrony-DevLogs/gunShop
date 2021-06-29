@@ -62,38 +62,3 @@
     <script src="main.js"></script>
 </body>
 </html>
-
-
-
-<!--
-    //sound efeects
-
-var items = document.querySelectorAll(".item");
-
-for(let i=0;i<items.length;i++){
-    let addBtn = items[i].querySelector(".add")
-    addBtn.addEventListener("click",()=>{
-        let price = parseInt(items[i].querySelector(".pricei").innerHTML);
-        let total = parseInt(document.getElementById("total").innerHTML)
-        document.getElementById("total").innerHTML = price + total
-        
-    })
-    let delBtn = items[i].querySelector(".del")
-    delBtn.addEventListener("click",()=>{
-        let price = parseInt(items[i].querySelector(".pricei").innerHTML);
-        let total = parseInt(document.getElementById("total").innerHTML)
-        document.getElementById("total").innerHTML = total -= price
-        if(total < 0){
-            document.getElementById("total").innerHTML = 0
-        }
-
-    })
-}
-
-/*
-            document.getElementById("total").innerHTML = price + total;   
-            let total = parseInt(items[i].querySelector("#total").innerHTML);
-    
-         */
-
--->

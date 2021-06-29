@@ -153,13 +153,14 @@ nav > ul > li , a{
     transition: .6s;
 }
 
-#circle{
+#square{
     text-align: center;
     height: 15px;
     width: 15px;
-    border-radius: 100%;
     background-color: red;
     font-size: 15px;
+    position: absolute;
+    margin: 10px;
 }
 
 .count{
