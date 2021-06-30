@@ -57,6 +57,7 @@ for(let i=0;i<items.length;i++){
     let addBtn = items[i].querySelector(".add");
     let delBtn = items[i].querySelector(".del");
     let price = parseInt(items[i].querySelector(".pricei").innerHTML);
+    let heart = items[i].querySelector(".heart")
         
     addBtn.addEventListener("click",()=>{    
         add(totalPrice,price);
@@ -72,9 +73,17 @@ for(let i=0;i<items.length;i++){
             parseInt(document.getElementById("total").innerHTML = 0);
         }
     })
+
+    heart.addEventListener("click",()=>{
+        heart.style.color = "red"
+    })
+    heart.addEventListener("dblclick",()=>{
+        heart.removeAttribute("style")
+    })
 } 
 
 deletee = document.getElementById("cart").addEventListener("click",()=>{
     rem(totalPrice)
     parseInt(document.getElementById("total").innerHTML = 0);
 })
+
