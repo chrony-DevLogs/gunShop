@@ -209,7 +209,8 @@ nav > ul > li , a{
         margin-bottom: 100px;
     }
     nav > ul > li , a{
-        width: 50%;
+        width: 100%;
+        padding: 3px 50px;
     }
 
     .shop{
