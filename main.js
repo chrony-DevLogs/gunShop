@@ -4,7 +4,6 @@ var items = document.querySelectorAll(".item");
 var totalPrice = [];
 var sumOfAll = 0;
 var cart = document.getElementById("cart");
-var sum = 0;
 
 
 function add(arr,ite){
@@ -54,13 +53,14 @@ items.forEach(item =>{
 
 
 for(let i=0;i<items.length;i++){
-
+    let sum = 0;
     let addBtn = items[i].querySelector(".add");
     let delBtn = items[i].querySelector(".del");
     let price = parseInt(items[i].querySelector(".pricei").innerHTML);
     let heart = items[i].querySelector(".heart");
     let square = document.createElement("div");
     square.setAttribute("class","square")
+
     addBtn.addEventListener("click",()=>{    
         add(totalPrice,price);
         sumCounter(totalPrice);
