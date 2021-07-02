@@ -3,7 +3,8 @@
 var items = document.querySelectorAll(".item");
 var totalPrice = [];
 var sumOfAll = 0;
-var cart = document.getElementById("cart")
+var cart = document.getElementById("cart");
+var sum = 0;
 
 
 function add(arr,ite){
@@ -57,20 +58,33 @@ for(let i=0;i<items.length;i++){
     let addBtn = items[i].querySelector(".add");
     let delBtn = items[i].querySelector(".del");
     let price = parseInt(items[i].querySelector(".pricei").innerHTML);
-    let heart = items[i].querySelector(".heart")
-        
+    let heart = items[i].querySelector(".heart");
+    let square = document.createElement("div");
+    square.setAttribute("class","square")
     addBtn.addEventListener("click",()=>{    
         add(totalPrice,price);
         sumCounter(totalPrice);
         parseInt(document.getElementById("total").innerHTML = sumOfAll);
+        items[i].appendChild(square);
+        sum += 1;
+        parseInt(square.innerHTML = sum);
+      
+
     })
 
     delBtn.addEventListener("click",()=>{
         del(totalPrice,price)
         sumCounter(totalPrice)
         parseInt(document.getElementById("total").innerHTML = sumOfAll);
+        if(sum != 0){
+            sum -= 1;
+        }
+      
+        square.innerHTML = sum;
         if(sumCounter(totalPrice) == 0){
             parseInt(document.getElementById("total").innerHTML = 0);
+            items[i].removeChild(square);
+
         }
     })
 
@@ -80,10 +94,12 @@ for(let i=0;i<items.length;i++){
     heart.addEventListener("dblclick",()=>{
         heart.removeAttribute("style")
     })
+
+
+    deletee = document.getElementById("cart").addEventListener("click",()=>{
+        rem(totalPrice)
+        parseInt(document.getElementById("total").innerHTML = 0);
+        sum = 0;
+        items[i].removeChild(square);
+    })
 } 
-
-deletee = document.getElementById("cart").addEventListener("click",()=>{
-    rem(totalPrice)
-    parseInt(document.getElementById("total").innerHTML = 0);
-})
-

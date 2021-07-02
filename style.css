@@ -153,14 +153,15 @@ nav > ul > li , a{
     transition: .6s;
 }
 
-#square{
+.square{
     text-align: center;
-    height: 15px;
-    width: 15px;
+    min-height: 15px;
+    min-width: 15px;
     background-color: red;
     font-size: 15px;
     position: absolute;
     margin: 10px;
+    color: snow;
 }
 
 .count{
